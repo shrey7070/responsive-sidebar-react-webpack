@@ -7,6 +7,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "static"),
+    publicPath: "/",
   },
   module: {
     rules: [
@@ -29,6 +30,9 @@ module.exports = {
         use: ["file-loader"],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
